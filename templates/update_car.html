@@ -1,0 +1,49 @@
+{% include 'top.html' %}
+
+<div class="content">
+    <div class="container">
+        <h1 class="title" align="center">Update Car</h1>
+
+        <form class="newbooking pure-form pure-form-aligned" method="POST" action="{{url_for('update_car')}}">
+			<div class="pure-control-group">
+                <label for="car_id">ID:</label>
+                <input type="text" name="car_id" value="{{ carInfo.car_id }}" size="25" readonly required>
+            </div>
+            <div class="pure-control-group">
+                <label for="make">Make:</label>
+                <input type="text" name="make" value= "{{ carInfo.make }}" size="25" autofocus required>
+            </div>
+            <div class="pure-control-group">
+                <label for="model">Model:</label>
+				<input type="text" name="model" value="{{ carInfo.model }}" size="25" required>
+            </div>
+            <div class="pure-control-group">
+                <label for="model">Status:</label>
+				<input type="text" name="status" value="{{ carInfo.status }}" size="25" required>
+            </div>
+			<div class="pure-control-group">
+                <label for="type">Type:</label>
+				<input type="text" name="type" value="{{ carInfo.type }}" size="25" required>
+            </div>
+			<div class="pure-control-group">
+                <label for="wheel">Wheel:</label>
+				<input type="text" name="wheel" value="{{ carInfo.wheel }}" size="25">
+            </div>
+			<div class="pure-control-group">
+                <label for="purchasedate">Purchase Date:</label>
+                <input type="date" name="purchasedate" value="{{ carInfo.purchasedate }}" size="25" required>
+			</div>
+            <div class="pure-control-group">
+                <label for="employee">Managed By:</label>
+                <input type="text" name="employee" value="{{ carInfo.employee }}" size="25">
+			</div>
+			<div class="pure-control-group">
+                <label for="description">Description:</label>
+				<textarea name="description" rows="5" cols="32">{{ carInfo.description }}</textarea>
+            </div>
+            <button type="submit" class="flat">Update Car</button>
+        </form>
+    </div>
+</div>
+
+{% include 'bottom.html' %}
